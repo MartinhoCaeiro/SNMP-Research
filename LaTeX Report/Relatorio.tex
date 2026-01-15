@@ -23,19 +23,6 @@
 \usepackage{amssymb}
 \usepackage{titling}
 \usepackage[T1]{fontenc}
-
-% Set main font to Arial. If compiling with XeLaTeX/LuaLaTeX, use fontspec to select the system Arial.
-% Otherwise fall back to the uarial package (pdfLaTeX). If uarial is not available, Helvetica will be used.
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi>0
-    \usepackage{fontspec}
-    % For best results compile with XeLaTeX or LuaLaTeX so the system Arial is used.
-    \setmainfont{Arial}
-\else
-    % pdfLaTeX fallback: attempt to use a close sans-serif (uarial) and make it the document default.
-    \usepackage[scaled]{uarial}
-    \renewcommand*\familydefault{\sfdefault}
-\fi
 \usepackage{float}
 \usepackage[hidelinks]{hyperref}
 \usepackage{xcolor}
@@ -75,12 +62,12 @@
         \large\textbf{INSTITUTO POLITÉCNICO DE BEJA} \\
         \large\textbf{Escola Superior de Tecnologia e Gestão} \\
         \large\textbf{Mestrado em Engenharia de Segurança Informática} \\
-        \large\textbf{Criptografia e Criptanalise Aplicadas} \\
+        \large\textbf{Análise de Comunicações em Rede} \\
         
         \vspace{2cm}
         
         % Título do projeto
-        {\Huge \textbf{(De)cipher™}} \\
+        {\Huge \textbf{Relatório sobre SNMP}} \\
         
         \vspace{1.5cm}
         
@@ -100,7 +87,7 @@
         \vspace{4cm}
         
         % Local e data
-        {\large Beja, novembro de 2025}
+        {\large Beja, janeiro de 2026}
     \end{titlepage}
 }
 
@@ -113,12 +100,12 @@
         \large\textbf{INSTITUTO POLITÉCNICO DE BEJA} \\
         \large\textbf{Escola Superior de Tecnologia e Gestão} \\
         \large\textbf{Mestrado em Engenharia de Segurança Informática} \\
-        \large\textbf{Criptografia e Criptanalise Aplicadas} \\
+        \large\textbf{Análise de Comunicações em Rede} \\
         
         \vspace{2cm}
         
         % Título do projeto
-        {\Huge \textbf{(De)cipher™}} \\
+        {\Huge \textbf{Relatório sobre SNMP}} \\
         
         \vspace{1.5cm}
         
@@ -129,12 +116,12 @@
         \vspace{2cm}
 
         % Orientador
-        \large Orientador: Rui Miguel Silva \& Daniel José Da Graça Peceguinha Franco\\
+        \large Orientador: Daniel José Da Graça Peceguinha Franco\\
         
         \vfill
         
         % Local e data
-        {\large Beja, novembro de 2025}
+        {\large Beja, janeiro de 2026}
     \end{titlepage}
 }
 
@@ -152,25 +139,21 @@
 % Abstract
 \section*{\LARGE\textbf{\textit{Resumo}}}
 
-Este relatório descreve o desenvolvimento de uma aplicação de cifra e decifra de ficheiros, implementada em Python,
-uma linguagem de alto nível. O objetivo é explorar cifras de criptografia simétrica e demonstrar a aplicação prática das mesmas.
-Esta aplicação é desenvolvida no âmbito da unidade curricular de Criptografia e Criptanalise Aplicadas \cite{paglpd}.
+Este relatório apresenta um estudo detalhado sobre o protocolo SNMP (\textit{Simple Network Management Protocol}), um protocolo fundamental para a gestão e monitorização de dispositivos de rede. O trabalho aborda a evolução histórica do protocolo, desde a sua criação nos anos 80 até às versões mais recentes, explorando a arquitetura, componentes e funcionamento do SNMP. São analisadas em detalhe as três principais versões do protocolo -- SNMPv1, SNMPv2 e SNMPv3 -- comparando as suas características técnicas, mecanismos de segurança, vantagens e limitações. Particular ênfase é dada à evolução dos mecanismos de segurança, desde a autenticação baseada em comunidades simples nas versões iniciais até aos robustos mecanismos criptográficos da versão 3. O relatório também discute os principais desafios na implementação do protocolo e as suas aplicações práticas em ambientes empresariais modernos. Este relatório foi realizado no âmbito da unidade curricular de Análise de Comunicações em Rede, do Mestrado em Engenharia de Segurança Informática (\cite{pagacr}), e o modelo LaTeX está disponivel no repositório do Github (\cite{github}).
 
 \vspace{1cm}
 % Keywords
-\textbf{Keywords:} python, criptanalise, criptografia simétrica
+\textbf{Palavras-chave:} SNMP, gestão de redes, protocolos de rede, segurança de redes, SNMPv1, SNMPv2, SNMPv3
 \newpage
 %--------------------------------------------------------------------------------------------------------------------------------------
 
 \section*{\LARGE\textbf{\textit{Abstract}}}
 
-This report describes the development of a file encryption and decryption application, implemented in Python,
-a high-level language. The objective is to explore symmetric encryption ciphers and demonstrate their practical application.
-This application is developed within the scope of the course Cryptography and Applied Cryptanalysis \cite{paglpd}.
+This report presents a detailed study of the SNMP (Simple Network Management Protocol), a fundamental protocol for network device management and monitoring. The work addresses the historical evolution of the protocol, from its creation in the 1980s to the most recent versions, exploring the architecture, components, and operation of SNMP. The three main versions of the protocol -- SNMPv1, SNMPv2, and SNMPv3 -- are analyzed in detail, comparing their technical characteristics, security mechanisms, advantages, and limitations. Particular emphasis is given to the evolution of security mechanisms, from simple community-based authentication in early versions to the robust cryptographic mechanisms of version 3. The report also discusses the main challenges in protocol implementation and its practical applications in modern enterprise environments. This report was carried out within the scope of the Network Communications Analysis course, of the Master's in Computer Security Engineering (\cite{pagacr}), and the LaTeX model is available in the Github repository (\cite{github}).
 
 \vspace{1cm}
 % Keywords
-\textbf{Keywords:} python, cryptanalysis, symmetric cryptography
+\textbf{Keywords:} SNMP, network management, network protocols, network security, SNMPv1, SNMPv2, SNMPv3
 
 
 \renewcommand{\contentsname}{Índice}       % Título do sumário
@@ -187,248 +170,338 @@ This application is developed within the scope of the course Cryptography and Ap
 \pagenumbering{arabic}
 
 \section{Introdução}\label{intro}
-Esta aplicação consistirá na junção de 4 cifras de criptografia simétrica, AES, DES, Vigenère e PlayFair.
-A aplicação será desenvolvida em Python (\cite{python}) e tem como base uma interface gráfica simples (GUI),
-permitindo ao utilizador interagir com o sistema de forma simples e eficiente.
-Todo o progresso do projeto será documentado no repositório GitHub (\cite{github}).\\\\\\
+
+Com o crescimento exponencial das redes de computadores nas últimas décadas, a necessidade de ferramentas eficazes para a gestão e monitorização de dispositivos de rede tornou-se imperativa. O SNMP (\textit{Simple Network Management Protocol}) emergiu como a solução padronizada para responder a esta necessidade, estabelecendo-se como o protocolo de gestão de rede mais amplamente utilizado na atualidade \cite{rfc3411}.
+
+Desenvolvido inicialmente nos finais da década de 1980 como parte da arquitetura de protocolos TCP/IP, o SNMP foi concebido com o objetivo de proporcionar um mecanismo simples e eficiente para a monitorização e controlo de dispositivos de rede, tais como routers, switches, servidores, impressoras e outros equipamentos conectados \cite{stallings2007}. A simplicidade conceptual do protocolo foi um dos fatores que contribuiu para a sua rápida adoção pela indústria.
+
+Ao longo de mais de três décadas de evolução, o SNMP passou por diversas revisões significativas, resultando em três versões principais: SNMPv1, SNMPv2 e SNMPv3. Cada versão trouxe melhorias em termos de funcionalidade, eficiência e, particularmente importante, segurança. A versão mais recente, SNMPv3, introduziu mecanismos robustos de autenticação e encriptação, respondendo às crescentes preocupações com a segurança das infraestruturas de rede \cite{rfc3414}.
+
+Este relatório tem como objetivo apresentar um estudo aprofundado do protocolo SNMP, explorando a sua arquitetura fundamental, os componentes que o constituem, e o seu funcionamento operacional. Serão analisadas detalhadamente as características técnicas de cada versão, bem como as suas vantagens e limitações. A análise comparativa entre versões permitirá compreender a evolução do protocolo e as razões que motivaram as alterações introduzidas. Por fim, serão discutidos os desafios atuais na implementação e utilização do SNMP em ambientes de rede modernos.
+
 
 %---------------------------------------------------------------------------------------------------------------------------
-\section{Teoria}\label{theory}
-\subsection{AES}
-O AES (Advanced Encryption Standard) (\cite{aes}) é um padrão de criptografia simétrica amplamente utilizado para proteger dados.
-Ele utiliza blocos de 128 bits e chaves de 128, 192 ou 256 bits, oferecendo alta segurança e eficiência.
+\section{Fundamentos do SNMP}\label{fundamentos}
 
-\subsection{DES}
-O DES (Data Encryption Standard) (\cite{des}) é um algoritmo de criptografia simétrica que foi amplamente utilizado no passado.
-Ele opera em blocos de 64 bits e utiliza uma chave de 56 bits.
-Embora tenha sido substituído por algoritmos mais seguros, o DES ainda é relevante para fins educacionais.
+\subsection{Definição e Propósito}
 
-\subsection{Vigenère}
-A cifra de Vigenère (\cite{vigenere}) é um método de criptografia que utiliza uma palavra-chave para cifrar o texto.
-Ela é baseada na cifra de César, mas em vez de usar um único deslocamento, ela aplica deslocamentos diferentes com
-base nas letras da palavra-chave.
+O SNMP (\textit{Simple Network Management Protocol}) é um protocolo da camada de aplicação, definido pela IETF (\textit{Internet Engineering Task Force}), que permite a gestão e monitorização de dispositivos numa rede IP. O protocolo fornece um conjunto padronizado de operações para coletar informações sobre o estado dos dispositivos, modificar configurações e receber notificações sobre eventos significativos \cite{rfc1157}.
 
-\subsection{PlayFair}
-A cifra de PlayFair (\cite{playfair}) é um método de criptografia que utiliza uma matriz de 5x5 para cifrar pares de letras.
-Ela é mais segura do que a cifra de César, pois não utiliza um deslocamento fixo.
+O principal objetivo do SNMP é facilitar a troca de informações de gestão entre dispositivos de rede, permitindo que administradores monitorizem o desempenho da rede, detetem problemas rapidamente e ajustem configurações remotamente. Esta capacidade é essencial em redes de grande dimensão, onde a gestão manual de cada dispositivo seria impraticável.
 
-%---------------------------------------------------------------------------------------------------------------------------
-\newpage
-\section{Desenvolvimento da Aplicação}\label{dev}
-Todos os seguintes scripts foram desenvolvidos em Python com o uso do VS Code (\cite{vscode}) e todos verificam se a maquina possui os pacotes necessários
-para o funcionamento da ferramenta, irá perguntar se quer instalar para poder continuar a utilizar. Caso
-o utilizador deseje prosseguir, o script irá instalar os pacotes necessários e depois irá ativá-los.
+\subsection{Arquitetura do SNMP}
 
-%---------------------------------------------------------------------------------------------------------------------------
-\subsection{GUI}
-A GUI é o metodo principal de interação com a ferramenta. Para aceder a um dos metodos de cifra/decifra, o utilizador deve selecionar a aba correspondente.
-Para executar a GUI apenas é necessário escrever `python gui.py`.\\
+A arquitetura do SNMP baseia-se no modelo gestor-agente (\textit{manager-agent}), composto por quatro elementos principais \cite{mauro2005}:
 
-A GUI apresenta-se da seguinte forma:\\
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.9\textwidth]{Recursos/GUI.png}
-	\caption{Exemplo da interface gráfica da aplicação.}
-	\label{fig:gui_main}
-\end{figure}
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{Gestor SNMP (\textit{Manager})}: Sistema responsável por comunicar com os agentes SNMP instalados nos dispositivos geridos. O gestor envia pedidos de informação, processa as respostas recebidas e apresenta os dados numa interface compreensível para o administrador. Pode também enviar comandos para modificar configurações nos dispositivos remotos.
+    
+    \item \textbf{Agente SNMP (\textit{Agent})}: Software que executa nos dispositivos geridos e responde aos pedidos do gestor. O agente mantém uma base de dados local com informações sobre o dispositivo e pode enviar notificações (\textit{traps}) ao gestor quando ocorrem eventos significativos.
+    
+    \item \textbf{MIB (\textit{Management Information Base})}: Base de dados hierárquica que define as variáveis (objetos) que podem ser consultadas ou modificadas num dispositivo. A MIB é estruturada como uma árvore, onde cada objeto é identificado por um OID (\textit{Object Identifier}) único. Existem MIBs standard, definidas pela IETF, e MIBs proprietárias, desenvolvidas por fabricantes específicos.
+    
+    \item \textbf{Protocolo de Rede}: O SNMP utiliza normalmente UDP (\textit{User Datagram Protocol}) como protocolo de transporte, usando as portas 161 para pedidos do gestor e 162 para \textit{traps} dos agentes. A escolha do UDP deve-se à sua simplicidade e baixo overhead, características alinhadas com a filosofia de simplicidade do SNMP.
+\end{enumerate}
 
-%---------------------------------------------------------------------------------------------------------------------------
-\newpage
-\subsection{AES}
-Implementou-se uma ferramenta para cifragem e decifragem de ficheiros utilizando AES em modo ECB (biblioteca PyCryptodome).
-A chave é carregada a partir de ficheiro através da rotina interna \texttt{\_read\_key\_file}. Essa rotina aceita uma string hexadecimal
-(preferencial) ou texto UTF‑8, converte para \texttt{bytes} e valida o comprimento (16, 24 ou 32 bytes). O formato do ficheiro cifrado utilizado
-pelo módulo é o ciphertext puro (sem IV). A encriptação aplica preenchimento compatível com PKCS\#7 para completar blocos de 16 bytes;
-a descifragem valida e remove esse preenchimento. Em caso de ficheiro de chave inexistente, tamanho de chave inválido ou padding inválido, são lançadas exceções apropriadas.\\
+\subsection{Funcionamento e Operações}
 
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{0.48\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{Recursos/aes_enc.png}
-		\caption{Cifragem}
-		\label{fig:aes_enc}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.48\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{Recursos/aes_dec.png}
-		\caption{Decifragem}
-		\label{fig:aes_dec}
-	\end{subfigure}
-	\caption{Cifragem e Decifragem com AES}
-	\label{fig:aes_combined}
-\end{figure}
+O SNMP define um conjunto limitado de operações básicas, mantendo a simplicidade que caracteriza o protocolo. As principais operações são \cite{rfc3416}:
+
+\begin{itemize}
+    \item \textbf{GET}: Permite ao gestor obter o valor de uma ou mais variáveis específicas da MIB. Esta é a operação mais comum, utilizada para consultar informações sobre o estado do dispositivo.
+    
+    \item \textbf{GET-NEXT}: Obtém o valor do próximo objeto na hierarquia da MIB. Esta operação é útil para percorrer sequencialmente a MIB sem conhecimento prévio de todos os OIDs disponíveis.
+    
+    \item \textbf{GET-BULK}: Introduzida no SNMPv2, permite obter múltiplos valores numa única operação, melhorando significativamente a eficiência na recuperação de grandes quantidades de dados.
+    
+    \item \textbf{SET}: Permite ao gestor modificar o valor de variáveis na MIB do agente, possibilitando a alteração de configurações remotamente.
+    
+    \item \textbf{TRAP}: Notificação assíncrona enviada pelo agente ao gestor quando ocorre um evento significativo (por exemplo, reinicialização do dispositivo, falha de interface, ultrapassagem de limites). Ao contrário das outras operações, o TRAP é iniciado pelo agente, não pelo gestor.
+    
+    \item \textbf{INFORM}: Semelhante ao TRAP, mas com confirmação de receção. Introduzida no SNMPv2, garante maior fiabilidade na entrega de notificações.
+\end{itemize}
+
 
 %---------------------------------------------------------------------------------------------------------------------------
-\newpage
-\subsection{DES}
-Implementou‑se uma ferramenta para cifragem e decifragem de ficheiros utilizando DES em modo ECB (biblioteca PyCryptodome).
-A chave é carregada a partir de ficheiro pela rotina interna \texttt{\_read\_key\_file}, que aceita uma string hexadecimal (preferencial)
-ou texto UTF‑8, converte para \texttt{bytes} e valida o comprimento (exatamente 8 bytes). O formato do ficheiro cifrado é o ciphertext puro (sem IV).
-A encriptação aplica preenchimento compatível com PKCS\#5 (blocos de 8 bytes); a descifragem valida e remove esse preenchimento. Em caso de ficheiro de chave inexistente,
-tamanho de chave inválido ou padding inválido, são lançadas exceções apropriadas.\\
+\section{Versões do SNMP}\label{versoes}
 
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{0.48\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{Recursos/des_enc.png}
-		\caption{Cifragem}
-		\label{fig:des_enc}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.48\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{Recursos/des_dec.png}
-		\caption{Decifragem}
-		\label{fig:des_dec}
-	\end{subfigure}
-	\caption{Cifragem e Decifragem com DES}
-	\label{fig:des_combined}
-\end{figure}
+\subsection{SNMPv1}\label{snmpv1}
+
+\subsubsection{Características}
+
+O SNMPv1, definido nas RFC 1155, 1157 e 1212, foi a primeira versão do protocolo, publicada em 1988 \cite{rfc1157}. Esta versão estabeleceu os fundamentos conceptuais que persistem em todas as versões subsequentes do protocolo.
+
+As principais características do SNMPv1 incluem:
+
+\begin{itemize}
+    \item \textbf{Simplicidade}: Desenho minimalista com operações básicas (GET, GET-NEXT, SET, TRAP).
+    \item \textbf{Estrutura de dados}: Utiliza SMI (\textit{Structure of Management Information}) baseada em ASN.1 (\textit{Abstract Syntax Notation One}) para definir a estrutura dos dados.
+    \item \textbf{Autenticação por comunidade}: Sistema simples baseado em strings de comunidade que funcionam como passwords partilhadas.
+    \item \textbf{Transporte UDP}: Utiliza UDP para comunicação, minimizando o overhead de rede.
+    \item \textbf{Tipos de mensagens}: Define cinco tipos de PDUs (\textit{Protocol Data Units}): GetRequest, GetNextRequest, SetRequest, GetResponse e Trap.
+\end{itemize}
+
+\subsubsection{Vantagens}
+
+O SNMPv1 apresenta várias vantagens que justificaram a sua ampla adoção:
+
+\begin{enumerate}
+    \item \textbf{Simplicidade de implementação}: O protocolo é suficientemente simples para ser implementado em dispositivos com recursos limitados, como switches de baixo custo e dispositivos IoT básicos.
+    
+    \item \textbf{Baixo consumo de recursos}: A utilização de UDP e a estrutura simples das mensagens resultam em overhead mínimo, tanto em termos de processamento como de largura de banda.
+    
+    \item \textbf{Interoperabilidade}: A standardização pela IETF garantiu que dispositivos de diferentes fabricantes pudessem comunicar usando o mesmo protocolo.
+    
+    \item \textbf{Facilidade de configuração}: A configuração básica do SNMPv1 é relativamente simples, requerendo apenas a definição das strings de comunidade.
+\end{enumerate}
+
+\subsubsection{Desvantagens}
+
+Apesar das suas vantagens, o SNMPv1 apresenta limitações significativas:
+
+\begin{enumerate}
+    \item \textbf{Segurança fraca}: As strings de comunidade são transmitidas em texto claro, tornando o protocolo vulnerável a ataques de \textit{sniffing}. Qualquer pessoa com acesso à rede pode capturar e utilizar estas credenciais.
+    
+    \item \textbf{Ausência de encriptação}: Toda a comunicação é transmitida sem encriptação, expondo informações potencialmente sensíveis sobre a configuração e estado da rede.
+    
+    \item \textbf{Falta de mecanismos de integridade}: Não existem verificações para garantir que as mensagens não foram alteradas durante a transmissão.
+    
+    \item \textbf{Tratamento de erros limitado}: O SNMPv1 possui capacidades limitadas de tratamento e reporte de erros, dificultando o diagnóstico de problemas.
+    
+    \item \textbf{Operações limitadas}: A ausência de operações como GET-BULK resulta em ineficiência quando é necessário obter grandes quantidades de dados.
+    
+    \item \textbf{Sem confirmação de TRAPs}: Os TRAPs são enviados sem confirmação, podendo perder-se sem que o agente tenha conhecimento.
+\end{enumerate}
+
+
+\subsection{SNMPv2}\label{snmpv2}
+
+\subsubsection{Características}
+
+O SNMPv2, inicialmente publicado em 1993 e posteriormente revisto (SNMPv2c definido na RFC 1901), foi desenvolvido para endereçar algumas das limitações funcionais do SNMPv1 \cite{rfc1905}. A versão "c" (\textit{community-based}) tornou-se a mais amplamente utilizada.
+
+As principais características do SNMPv2 incluem:
+
+\begin{itemize}
+    \item \textbf{Novos tipos de dados}: Introdução de novos tipos como Counter64 para contadores de 64 bits, essencial para interfaces de alta velocidade.
+    \item \textbf{GET-BULK}: Nova operação que permite obter múltiplas variáveis numa única mensagem, melhorando significativamente a eficiência.
+    \item \textbf{INFORM}: Novo tipo de notificação com confirmação de receção, aumentando a fiabilidade.
+    \item \textbf{Tratamento de erros melhorado}: Códigos de erro mais detalhados facilitam o diagnóstico de problemas.
+    \item \textbf{Comunicação gestor-gestor}: Capacidade de comunicação entre sistemas gestores, permitindo arquiteturas distribuídas.
+\end{itemize}
+
+\subsubsection{Vantagens}
+
+O SNMPv2 trouxe melhorias significativas em relação à versão anterior:
+
+\begin{enumerate}
+    \item \textbf{Maior eficiência}: A operação GET-BULK permite obter múltiplos valores numa única transação, reduzindo drasticamente o número de mensagens necessárias para operações de descoberta e monitorização.
+    
+    \item \textbf{Melhor desempenho}: O suporte a contadores de 64 bits é essencial para interfaces de rede modernas (Gigabit e superior), evitando problemas de \textit{wrap-around} de contadores de 32 bits.
+    
+    \item \textbf{Fiabilidade melhorada}: As mensagens INFORM com confirmação garantem que notificações críticas não se percam.
+    
+    \item \textbf{Tratamento de erros superior}: Mensagens de erro mais descritivas facilitam a identificação e resolução de problemas.
+    
+    \item \textbf{Compatibilidade}: O SNMPv2c mantém compatibilidade com o modelo de segurança baseado em comunidades, facilitando a migração desde o SNMPv1.
+\end{enumerate}
+
+\subsubsection{Desvantagens}
+
+Apesar das melhorias, o SNMPv2 mantém algumas limitações:
+
+\begin{enumerate}
+    \item \textbf{Segurança inadequada}: O SNMPv2c mantém o modelo de segurança fraco baseado em comunidades do SNMPv1, sem encriptação ou autenticação robusta.
+    
+    \item \textbf{Complexidade histórica}: As tentativas iniciais de criar um modelo de segurança robusto (SNMPv2u, SNMPv2*) resultaram em múltiplas variantes incompatíveis, causando confusão no mercado.
+    
+    \item \textbf{Fragmentação}: A existência de várias variantes do SNMPv2 criou problemas de interoperabilidade e adoção lenta.
+    
+    \item \textbf{Overhead adicional}: As novas funcionalidades, embora úteis, aumentam ligeiramente a complexidade e os requisitos de processamento.
+\end{enumerate}
+
+
+\subsection{SNMPv3}\label{snmpv3}
+
+\subsubsection{Características}
+
+O SNMPv3, definido nas RFC 3410-3415, foi publicado em 2002 e representa a evolução mais significativa do protocolo, focando-se primariamente em segurança \cite{rfc3411}. Esta versão não substitui o SNMPv2, mas adiciona capacidades de segurança robustas.
+
+As características fundamentais do SNMPv3 incluem:
+
+\begin{itemize}
+    \item \textbf{Modelo de segurança baseado em utilizadores (USM)}: Autenticação baseada em utilizadores individuais em vez de comunidades partilhadas.
+    
+    \item \textbf{Autenticação}: Suporte para protocolos de autenticação HMAC-MD5-96 e HMAC-SHA-96, garantindo a verificação da identidade do remetente.
+    
+    \item \textbf{Encriptação}: Suporte para encriptação usando DES, 3DES e AES, protegendo a confidencialidade dos dados transmitidos.
+    
+    \item \textbf{Controlo de acesso (VACM)}: Modelo baseado em visualizações (\textit{View-based Access Control Model}) que permite definir permissões granulares sobre que objetos cada utilizador pode aceder.
+    
+    \item \textbf{Proteção contra replay}: Utilização de \textit{timestamps} e números de sequência para prevenir ataques de repetição.
+    
+    \item \textbf{Modularidade}: Arquitetura modular que permite a adição de novos modelos de segurança sem alterar a estrutura base.
+\end{itemize}
+
+\subsubsection{Vantagens}
+
+O SNMPv3 oferece vantagens significativas, especialmente em ambientes que requerem segurança:
+
+\begin{enumerate}
+    \item \textbf{Segurança robusta}: A implementação de autenticação, encriptação e controlo de acesso torna o SNMPv3 adequado para ambientes onde a segurança é crítica.
+    
+    \item \textbf{Autenticação forte}: Os mecanismos HMAC garantem que as mensagens provêm de fontes legítimas e não foram alteradas.
+    
+    \item \textbf{Confidencialidade}: A encriptação protege informações sensíveis sobre a configuração e estado da rede contra interceptação.
+    
+    \item \textbf{Controlo de acesso granular}: O VACM permite definir políticas de acesso detalhadas, limitando o que cada utilizador pode visualizar ou modificar.
+    
+    \item \textbf{Conformidade}: Atende aos requisitos de segurança de standards como PCI-DSS, HIPAA e outros regulamentos de segurança da informação.
+    
+    \item \textbf{Proteção contra ataques}: Mecanismos de proteção contra ataques de repetição, modificação e mascaramento.
+    
+    \item \textbf{Flexibilidade}: Permite configurar diferentes níveis de segurança (sem autenticação, com autenticação, com autenticação e encriptação) conforme as necessidades.
+\end{enumerate}
+
+\subsubsection{Desvantagens}
+
+Apesar das suas capacidades avançadas, o SNMPv3 apresenta alguns desafios:
+
+\begin{enumerate}
+    \item \textbf{Complexidade de configuração}: A configuração do SNMPv3 é significativamente mais complexa que as versões anteriores, requerendo a definição de utilizadores, contextos, visualizações e políticas de acesso.
+    
+    \item \textbf{Overhead computacional}: Os processos de autenticação e encriptação consomem mais recursos de CPU, o que pode ser problemático em dispositivos com capacidades limitadas.
+    
+    \item \textbf{Dificuldade de implementação}: A implementação correta de todos os mecanismos de segurança requer conhecimento especializado e atenção aos detalhes.
+    
+    \item \textbf{Compatibilidade}: Dispositivos mais antigos podem não suportar SNMPv3, limitando a sua utilização em redes heterogéneas.
+    
+    \item \textbf{Desempenho}: A encriptação e autenticação introduzem latência adicional, embora geralmente aceitável para a maioria das aplicações.
+    
+    \item \textbf{Gestão de chaves}: A gestão segura de credenciais e chaves criptográficas adiciona complexidade administrativa.
+    
+    \item \textbf{Curva de aprendizagem}: Administradores familiarizados com SNMPv1/v2c necessitam de formação adicional para utilizar eficazmente o SNMPv3.
+\end{enumerate}
+
+
 %---------------------------------------------------------------------------------------------------------------------------
-\newpage
-\subsection{Vigenère}
-Implementou‑se uma ferramenta para cifragem e decifragem de ficheiros usando a cifra de Vigenère com base numa tabela 95x95 carregada através de um ficheiro.
-A rotina interna \texttt{read\_table\_from\_file} lê e valida uma tabela com 95 linhas de 95 caracteres ASCII visíveis (32–126);
-\texttt{read\_key\_from\_file} lê a chave, filtra apenas caracteres ASCII visíveis e devolve uma string (valida que não esteja vazia).
-O texto é normalizado para caracteres ASCII visíveis antes do processamento;
-a função \texttt{process\_text} avança o índice da chave apenas sobre caracteres da tabela e usa \texttt{encrypt\_char}/\texttt{decrypt\_char} para cifrar/decifrar carácter a carácter segundo a
-linha da tabela definida pelo carácter da chave. As funções \texttt{encrypt\_file}/\texttt{decrypt\_file} recebem \texttt{key} como o par [\texttt{table\_path}, \texttt{key\_path}],
-lêem os ficheiros de entrada e escrevem ficheiros de saída contendo apenas letras maiúsculas A–Z. Em caso de ficheiro de tabela/chave inexistente,
-tabela com formato inválido ou chave vazia, são lançadas exceções apropriadas.\\\\
+\section{Análise Comparativa das Versões}\label{comparacao}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.9\textwidth]{Recursos/vigenere.png}
-	\caption{Cifragem e Decifragem com Vigenère}
-	\label{fig:vigenere}
-\end{figure}
+A tabela~\ref{tab:comparacao} apresenta uma comparação sintética das três versões principais do SNMP, destacando as principais diferenças em termos de funcionalidades e características de segurança.
+
+\begin{table}[h!]
+\centering
+\caption{Comparação entre as versões do SNMP}
+\label{tab:comparacao}
+\begin{tabular}{|p{4cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|}
+\hline
+\textbf{Característica} & \textbf{SNMPv1} & \textbf{SNMPv2c} & \textbf{SNMPv3} \\
+\hline
+Ano de publicação & 1988 & 1993/1996 & 2002 \\
+\hline
+Autenticação & Comunidade (texto claro) & Comunidade (texto claro) & USM com HMAC \\
+\hline
+Encriptação & Não & Não & Sim (DES/AES) \\
+\hline
+Integridade & Não & Não & Sim \\
+\hline
+Controlo de acesso & Básico & Básico & VACM (granular) \\
+\hline
+Operação GET-BULK & Não & Sim & Sim \\
+\hline
+INFORM & Não & Sim & Sim \\
+\hline
+Contadores 64-bit & Não & Sim & Sim \\
+\hline
+Complexidade & Baixa & Média & Alta \\
+\hline
+Segurança & Muito fraca & Muito fraca & Forte \\
+\hline
+Desempenho & Excelente & Muito bom & Bom \\
+\hline
+Compatibilidade & Universal & Universal & Limitada \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Evolução da Segurança}
+
+A evolução mais significativa entre as versões do SNMP relaciona-se com a segurança. Enquanto o SNMPv1 e SNMPv2c utilizam um modelo de segurança extremamente simples baseado em strings de comunidade transmitidas em texto claro, o SNMPv3 introduz um modelo de segurança completo com múltiplas camadas de proteção.
+
+O modelo de segurança do SNMPv3 define três níveis de segurança \cite{rfc3414}:
+
+\begin{enumerate}
+    \item \textbf{noAuthNoPriv}: Sem autenticação nem encriptação (equivalente a SNMPv1/v2c).
+    \item \textbf{authNoPriv}: Com autenticação mas sem encriptação.
+    \item \textbf{authPriv}: Com autenticação e encriptação (nível recomendado).
+\end{enumerate}
+
+\subsection{Considerações de Desempenho}
+
+Em termos de desempenho, existe uma relação inversa entre segurança e eficiência. O SNMPv1 oferece o melhor desempenho devido à sua simplicidade, enquanto o SNMPv3 com encriptação e autenticação apresenta maior overhead. No entanto, em redes modernas, este overhead é geralmente insignificante face aos benefícios de segurança obtidos.
+
+\subsection{Adoção e Uso Atual}
+
+Apesar das vulnerabilidades conhecidas, o SNMPv1 e SNMPv2c continuam a ser amplamente utilizados, especialmente em ambientes internos considerados seguros. No entanto, a crescente preocupação com segurança e os requisitos regulamentares estão a impulsionar a migração para SNMPv3, particularmente em setores como banca, saúde e infraestruturas críticas \cite{cisco2020}.
+
 
 %---------------------------------------------------------------------------------------------------------------------------
-\newpage
-\subsection{PlayFair}
-Implementou‑se uma ferramenta para cifragem e decifragem de ficheiros usando a cifra de Playfair com uma tabela 5×5 carregada através de um ficheiro.
-A rotina interna \texttt{read\_board\_from\_file} lê e valida a tabela (linhas de letras; caracteres não‑alfabéticos são ignorados), mapeia 'J' para 'I' e, se necessário,
-preenche os restantes caracteres A..Z (sem J). A normalização do texto é feita por \texttt{fix\_message}: conserva apenas letras ASCII, converte para maiúsculas,
-insere 'X' entre letras duplicadas num digrafo e adiciona 'X' se necessário para obter comprimento par. O par (digrafo) é transformado por \texttt{process\_pair}
-segundo as regras de Playfair (mesma linha → deslocamento horizontal; mesma coluna → deslocamento vertical; caso rectangular → troca de colunas).
-As funções \texttt{encrypt\_text}/\texttt{decrypt\_text} aplicam o processamento ao texto; \texttt{encrypt\_file}/\texttt{decrypt\_file} leem/escrevem
-ficheiros de texto usando o caminho da board como \texttt{key}. Em caso de ficheiro de board inexistente são lançadas exceções apropriadas.\\
+\section{Desafios e Considerações de Implementação}\label{desafios}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.9\textwidth]{Recursos/playfair.png}
-	\caption{Cifragem e Decifragem com PlayFair}
-	\label{fig:playfair}
-\end{figure}
+A implementação eficaz do SNMP em ambientes de produção apresenta diversos desafios que os administradores de rede devem considerar:
 
-%---------------------------------------------------------------------------------------------------------------------------
-\newpage
-\subsection{Testes e Resultados}
-Os seguintes testes foram realizados para verificar o correto funcionamento das cifras implementadas.
-Os dados de entrada utilizados foram ficheiros de texto simples contendo frases comuns em português.
-Todos os ficheiros de chave e tabela foram criados previamente e armazenados em ficheiros separados.\\
+\subsection{Segurança}
 
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{\textwidth}
-		\centering
-		\includegraphics[width=0.9\textwidth]{Recursos/aes_test1.png}
-		\caption{Depois da Cifragem}
-		\vspace{0.5cm}
-		\label{fig:aes_bf}
-	\end{subfigure}
-	\vspace{0.5cm}
-	\begin{subfigure}[b]{\textwidth}
-		\centering
-		\includegraphics[width=0.9\textwidth]{Recursos/aes_test2.png}
-		\caption{Depois da Decifragem}
-		\label{fig:aes_af}
-	\end{subfigure}
-	\caption{Testes com AES}
-	\label{fig:aes_test}
-\end{figure}
+A segurança constitui o principal desafio na implementação do SNMP. Mesmo com a disponibilidade do SNMPv3, muitas organizações continuam a utilizar versões anteriores devido à compatibilidade com equipamentos legados. Quando a utilização de SNMPv1/v2c é inevitável, devem ser implementadas medidas compensatórias, tais como:
 
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{\textwidth}
-		\centering
-		\includegraphics[width=0.9\textwidth]{Recursos/des_test1.png}
-		\caption{Depois da Cifragem}
-		\vspace{0.5cm}
-		\label{fig:des_bf}
-	\end{subfigure}
-	\vspace{0.5cm}
-	\begin{subfigure}[b]{\textwidth}
-		\centering
-		\includegraphics[width=0.9\textwidth]{Recursos/des_test2.png}
-		\caption{Depois da Decifragem}
-		\label{fig:des_af}
-	\end{subfigure}
-	\caption{Testes com DES}
-	\label{fig:des_test}
-\end{figure}
+\begin{itemize}
+    \item Segregação da rede de gestão em VLANs dedicadas
+    \item Utilização de ACLs (\textit{Access Control Lists}) para restringir acesso aos agentes SNMP
+    \item Escolha de strings de comunidade complexas e únicas
+    \item Desativação do acesso SNMP em interfaces públicas
+    \item Monitorização de tentativas de acesso não autorizado
+\end{itemize}
 
-\newpage
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{\textwidth}
-		\centering
-		\includegraphics[width=0.9\textwidth]{Recursos/vigenere_test1.png}
-		\caption{Depois da Cifragem}
-		\vspace{0.5cm}
-		\label{fig:vigenere_bf}
-	\end{subfigure}
-	\vspace{0.5cm}
-	\begin{subfigure}[b]{\textwidth}
-		\centering
-		\includegraphics[width=0.9\textwidth]{Recursos/vigenere_test2.png}
-		\caption{Depois da Decifragem}
-		\label{fig:vigenere_af}
-	\end{subfigure}
-	\caption{Testes com Vigenère}
-	\label{fig:vigenere_test}
-\end{figure}
+\subsection{Escalabilidade}
 
-\vspace{3cm}
+Em redes de grande dimensão com milhares de dispositivos, a gestão via SNMP pode apresentar desafios de escalabilidade. O polling frequente de múltiplos dispositivos pode gerar tráfego significativo e sobrecarregar sistemas gestores. Estratégias para mitigar estes problemas incluem:
 
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{\textwidth}
-		\centering
-		\begin{subfigure}[b]{\textwidth}
-			\centering
-			\includegraphics[width=0.9\textwidth]{Recursos/playfair_test1.png}
-			\caption{Depois da Cifragem}
-			\vspace{0.5cm}
-			\label{fig:playfair_bf5}
-		\end{subfigure}
-		\vspace{0.5cm}
-		\begin{subfigure}[b]{\textwidth}
-			\centering
-			\includegraphics[width=0.9\textwidth]{Recursos/playfair_test2.png}
-			\caption{Depois da Decifragem}
-			\label{fig:playfair_af5}
-		\end{subfigure}
-	\end{subfigure}
-	\caption{Testes com PlayFair}
-\end{figure}
+\begin{itemize}
+    \item Ajuste dos intervalos de polling conforme a criticidade das métricas
+    \item Utilização de múltiplos servidores gestores com distribuição de carga
+    \item Implementação de sistemas de caching para reduzir queries repetitivas
+    \item Aproveitamento de TRAPs e INFORMs para notificações em vez de polling constante
+\end{itemize}
+
+\subsection{Interoperabilidade}
+
+A diversidade de implementações de SNMP entre fabricantes pode causar problemas de interoperabilidade. MIBs proprietárias e interpretações diferentes dos standards podem resultar em comportamentos inconsistentes. A validação cuidadosa e testes de integração são essenciais.
+
 
 %---------------------------------------------------------------------------------------------------------------------------
 \newpage
 \section{Conclusão}\label{con}
-O desenvolvimento desta aplicação permitiu explorar conceitos fundamentais sobre cifras simétricas.
-Apesar de alguns desafios encontrados, foi possível implementar as
-cifras solicitadas e configurar uma interface centralizada para facilitar a utilização das mesmas.
-Durante este processo, foram revistos conceitos previamente estudados na licenciatura de Engenharia Informática.\\\\\\
+
+O SNMP estabeleceu-se como o standard de facto para gestão de redes IP, mantendo-se relevante após mais de três décadas desde a sua criação inicial. A evolução do protocolo através de três versões principais reflete tanto a adaptação às necessidades crescentes de funcionalidade e segurança, como o compromisso com a retrocompatibilidade e simplicidade que caracterizaram a sua conceção original.
+
+A análise detalhada das três versões principais -- SNMPv1, SNMPv2c e SNMPv3 -- revela uma progressão clara nas capacidades do protocolo. O SNMPv1 estabeleceu os fundamentos conceptuais e demonstrou a viabilidade de um protocolo de gestão simples e eficiente. O SNMPv2 trouxe melhorias funcionais importantes, particularmente a operação GET-BULK e o suporte a contadores de 64 bits, essenciais para redes modernas de alta velocidade. O SNMPv3 representou um salto qualitativo significativo ao introduzir mecanismos robustos de segurança, tornando o protocolo adequado para ambientes onde a proteção de informação é crítica.
+
+A comparação entre versões evidencia os \textit{trade-offs} inerentes ao design de protocolos de rede. O SNMPv1 e SNMPv2c oferecem simplicidade e desempenho excelente, mas à custa de segurança inadequada. O SNMPv3 fornece segurança robusta, mas introduz complexidade de configuração e overhead computacional. A escolha da versão apropriada deve considerar cuidadosamente o contexto específico de implementação, balançando requisitos de segurança, compatibilidade com equipamento existente, recursos disponíveis e expertise da equipa de administração.
+
+Apesar das suas limitações, particularmente as vulnerabilidades de segurança das versões iniciais, o SNMP continua a ser amplamente utilizado em praticamente todas as redes empresariais modernas. A sua ubiquidade, simplicidade conceptual e amplo suporte por fabricantes garantem que o protocolo permanecerá relevante no futuro próximo. No entanto, a crescente adoção de SNMPv3 e o desenvolvimento de protocolos alternativos como NETCONF e RESTCONF sugerem uma evolução contínua no panorama da gestão de redes.
+
+Para organizações que planeiam implementar ou migrar sistemas de gestão SNMP, recomenda-se fortemente a adoção do SNMPv3 sempre que possível, particularmente em ambientes onde a segurança é uma preocupação. Quando a utilização de versões anteriores for inevitável devido a limitações de equipamento legado, devem ser implementadas medidas de segurança compensatórias rigorosas.
+
+Em conclusão, o SNMP representa um exemplo notável de um protocolo que, apesar das suas limitações iniciais, conseguiu adaptar-se e evoluir para responder às necessidades em constante mudança das redes de computadores modernas, mantendo simultaneamente os princípios de simplicidade que motivaram a sua criação.
+
 
 %---------------------------------------------------------------------------------------------------------------------------
 \section{Notas finais}\label{final}
-Irá ser entregue juntamente com o relatório e o código fonte da aplicação,
-os ficheiros de chave e tabela utilizados nos testes de modo a confirmar a sua veracidade
-e permitir a sua replicação em fase de avaliação, de uma forma igual à apresentada no relatório.
+
+Este trabalho foi desenvolvido no âmbito da unidade curricular de Análise de Comunicações em Rede do Mestrado em Engenharia de Segurança Informática do Instituto Politécnico de Beja, sob orientação do Professor Daniel José Da Graça Peceguinha Franco.
+
+A elaboração deste relatório permitiu aprofundar o conhecimento sobre um dos protocolos mais fundamentais em gestão de redes, compreendendo não apenas os seus aspetos técnicos, mas também a evolução histórica e as considerações práticas de implementação que afetam as decisões tecnológicas em ambientes reais.
+
 %---------------------------------------------------------------------------------------------------------------------------
 
 \newpage

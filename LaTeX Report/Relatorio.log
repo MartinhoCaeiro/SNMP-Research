@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.7)  26 NOV 2025 21:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.7)  15 JAN 2026 19:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/Marti/Documents/De-cipher/LaTeX Report/Relatorio.tex"
-(c:/Users/Marti/Documents/De-cipher/LaTeX Report/Relatorio.tex
+**"c:/Users/Marti/Documents/SMNP-Research/LaTeX Report/Relatorio.tex"
+(c:/Users/Marti/Documents/SMNP-Research/LaTeX Report/Relatorio.tex
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-10-09>
 (C:\Users\Marti\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -736,12 +736,6 @@ Package: titling 2009/09/04 v2.1d maketitle typesetting
 \droptitle=\skip81
 ) (C:\Users\Marti\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
-) (C:\Users\Marti\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifxetex.sty
-Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
-) (C:\Users\Marti\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifluatex.sty
-Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
-) (C:\Users\Marti\AppData\Local\Programs\MiKTeX\tex/latex/arial\uarial.sty
-Package: uarial 2006/03/21 1.0 (WaS)
 ) (C:\Users\Marti\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count474
@@ -794,7 +788,7 @@ Package hyperref Info: Bookmarks ON on input line 4424.
 \c@Hy@tempcnt=\count479
 LaTeX Info: Redefining \url on input line 4763.
 \XeTeXLinkMargin=\dimen285
-(C:\Users\Marti\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+ (C:\Users\Marti\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (C:\Users\Marti\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
@@ -809,7 +803,8 @@ Package hyperref Info: backreferencing OFF on input line 6057.
 Package hyperref Info: Link coloring OFF on input line 6062.
 Package hyperref Info: Link coloring with OCG OFF on input line 6067.
 Package hyperref Info: PDF/A mode OFF on input line 6072.
- (C:\Users\Marti\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
+
+(C:\Users\Marti\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
@@ -898,33 +893,27 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'portuguese'.
-LaTeX Font Info:    Trying to load font information for T1+ua1 on input line 141.
- (C:\Users\Marti\AppData\Local\Programs\MiKTeX\tex/latex/arial\t1ua1.fd
-File: t1ua1.fd 2006/03/21 Fontinst v1.928 font definitions for T1/ua1.
-)
-LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
-(Font)              scaled to size 9.49997pt on input line 141.
  (Relatorio.aux)
 \openout1 = `Relatorio.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
 Package biblatex Info: Trying to load language 'portuguese' -> 'portuguese-apa'...
 Package biblatex Info: ... file 'portuguese-apa.lbx' found.
  (C:\Users\Marti\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-apa\portuguese-apa.lbx
@@ -947,8 +936,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Relatorio.bbl' found.
  (Relatorio.bbl)
-Package biblatex Info: Reference section=0 on input line 141.
-Package biblatex Info: Reference segment=0 on input line 141.
+Package biblatex Info: Reference section=0 on input line 128.
+Package biblatex Info: Reference segment=0 on input line 128.
  (C:\Users\Marti\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count498
@@ -973,7 +962,7 @@ Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package translations Info: no dictionary file `translations-basic-dictionary-portuges.trsl' found. on input line 141.
+Package translations Info: no dictionary file `translations-basic-dictionary-portuges.trsl' found. on input line 128.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1009,72 +998,52 @@ Package translations Info: no dictionary file `translations-basic-dictionary-por
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 141.
+Package hyperref Info: Link coloring OFF on input line 128.
 (Relatorio.out) (Relatorio.out)
 \@outlinefile=\write5
 \openout5 = `Relatorio.out'.
 
 \c@lstlisting=\count504
-<Recursos/Logos/LOGO_IPB.png, id=69, 646.415pt x 499.8675pt>
+<Recursos/Logos/LOGO_IPB.png, id=121, 646.415pt x 499.8675pt>
 File: Recursos/Logos/LOGO_IPB.png Graphic file (type png)
 <use Recursos/Logos/LOGO_IPB.png>
-Package pdftex.def Info: Recursos/Logos/LOGO_IPB.png  used on input line 147.
+Package pdftex.def Info: Recursos/Logos/LOGO_IPB.png  used on input line 134.
 (pdftex.def)             Requested size: 170.71652pt x 132.01424pt.
-LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
-(Font)              scaled to size 11.39996pt on input line 147.
-LaTeX Font Info:    Font shape `T1/ua1/b/n' will be
-(Font)              scaled to size 11.39996pt on input line 147.
-LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
-(Font)              scaled to size 23.63593pt on input line 147.
-LaTeX Font Info:    Font shape `T1/ua1/b/n' will be
-(Font)              scaled to size 23.63593pt on input line 147.
-LaTeX Font Info:    Trying to load font information for TS1+ua1 on input line 147.
- (C:\Users\Marti\AppData\Local\Programs\MiKTeX\tex/latex/arial\ts1ua1.fd
-File: ts1ua1.fd 2006/03/21 Fontinst v1.928 font definitions for TS1/ua1.
-)
-LaTeX Font Info:    Font shape `TS1/ua1/b/n' will be
-(Font)              scaled to size 23.63593pt on input line 147.
-<Recursos/Logos/IPBejaESTIG.jpg, id=70, 501.875pt x 301.125pt>
+<Recursos/Logos/IPBejaESTIG.jpg, id=122, 501.875pt x 301.125pt>
 File: Recursos/Logos/IPBejaESTIG.jpg Graphic file (type jpg)
 <use Recursos/Logos/IPBejaESTIG.jpg>
-Package pdftex.def Info: Recursos/Logos/IPBejaESTIG.jpg  used on input line 147.
+Package pdftex.def Info: Recursos/Logos/IPBejaESTIG.jpg  used on input line 134.
 (pdftex.def)             Requested size: 170.71652pt x 102.43167pt.
 
 
 [1
 
-{C:/Users/Marti/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/Marti/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <./Recursos/Logos/LOGO_IPB.png> <./Recursos/Logos/IPBejaESTIG.jpg>]
+{C:/Users/Marti/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./Recursos/Logos/LOGO_IPB.png> <./Recursos/Logos/IPBejaESTIG.jpg>]
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.149 \secondtitlepage
+l.136 \secondtitlepage
                        [1]
-LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
-(Font)              scaled to size 13.67995pt on input line 153.
-LaTeX Font Info:    Font shape `T1/ua1/b/n' will be
-(Font)              scaled to size 13.67995pt on input line 153.
-LaTeX Font Info:    Font shape `T1/ua1/b/n' will be
-(Font)              scaled to size 16.41594pt on input line 153.
-LaTeX Font Info:    Font shape `T1/ua1/b/it' will be
-(Font)              scaled to size 16.41594pt on input line 153.
-LaTeX Font Info:    Font shape `T1/ua1/b/n' will be
-(Font)              scaled to size 9.49997pt on input line 161.
-
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.162 \newpage
+l.147 \newpage
                [1]
+Overfull \hbox (1.88039pt too wide) in paragraph at lines 156--157
+[]\T1/cmr/bx/n/10 Keywords: \T1/cmr/m/n/10 SNMP, network ma-na-ge-ment, network pro-to-cols, network se-cu-rity, SNMPv1, SNMPv2, SNMPv3 
+ []
+
+
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.180 \newpage
+l.163 \newpage
                [2] (Relatorio.toc
 LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
  (C:\Users\Marti\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
@@ -1097,232 +1066,64 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.186 \newpage
+l.169 \newpage
                [3]
-Underfull \hbox (badness 10000) in paragraph at lines 190--194
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 190--194
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 190--194
-
- []
-
-
 
 [1]
-Underfull \hbox (badness 10000) in paragraph at lines 224--226
 
- []
+[2]
 
-<Recursos/GUI.png, id=151, 573.94424pt x 343.88475pt>
-File: Recursos/GUI.png Graphic file (type png)
-<use Recursos/GUI.png>
-Package pdftex.def Info: Recursos/GUI.png  used on input line 230.
-(pdftex.def)             Requested size: 435.32422pt x 260.8304pt.
+[3]
 
-Underfull \hbox (badness 10000) in paragraph at lines 227--233
+[4]
 
- []
+[5]
 
-
-
-[2 <./Recursos/GUI.png>]
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 239.
- (C:\Users\Marti\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 238--243
-
- []
-
-<Recursos/aes_enc.png, id=160, 436.029pt x 302.93175pt>
-File: Recursos/aes_enc.png Graphic file (type png)
-<use Recursos/aes_enc.png>
-Package pdftex.def Info: Recursos/aes_enc.png  used on input line 248.
-(pdftex.def)             Requested size: 232.17242pt x 161.3065pt.
-LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
-(Font)              scaled to size 8.54997pt on input line 249.
-<Recursos/aes_dec.png, id=161, 402.303pt x 340.8735pt>
-File: Recursos/aes_dec.png Graphic file (type png)
-<use Recursos/aes_dec.png>
-Package pdftex.def Info: Recursos/aes_dec.png  used on input line 255.
-(pdftex.def)             Requested size: 232.17242pt x 196.7185pt.
-
-
-[3 <./Recursos/aes_enc.png> <./Recursos/aes_dec.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 266--271
-
- []
-
-<Recursos/des_enc.png, id=169, 437.83575pt x 298.716pt>
-File: Recursos/des_enc.png Graphic file (type png)
-<use Recursos/des_enc.png>
-Package pdftex.def Info: Recursos/des_enc.png  used on input line 276.
-(pdftex.def)             Requested size: 232.17242pt x 158.40076pt.
-<Recursos/des_dec.png, id=170, 448.67625pt x 341.47575pt>
-File: Recursos/des_dec.png Graphic file (type png)
-<use Recursos/des_dec.png>
-Package pdftex.def Info: Recursos/des_dec.png  used on input line 283.
-(pdftex.def)             Requested size: 232.17242pt x 176.69826pt.
-
-
-[4 <./Recursos/des_enc.png> <./Recursos/des_dec.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 293--301
-
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 402--402
+[]|\T1/cmr/m/n/10 Comunidade (texto
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 293--301
-
- []
-
-<Recursos/vigenere.png, id=177, 429.40425pt x 411.33675pt>
-File: Recursos/vigenere.png Graphic file (type png)
-<use Recursos/vigenere.png>
-Package pdftex.def Info: Recursos/vigenere.png  used on input line 304.
-(pdftex.def)             Requested size: 435.32422pt x 417.03477pt.
-
-
-[5 <./Recursos/vigenere.png>]
-LaTeX Font Info:    Font shape `TS1/ua1/m/n' will be
-(Font)              scaled to size 9.49997pt on input line 312.
-LaTeX Info: Symbol \textrightarrow not provided by
-            font family ua1 in TS1 encoding.
-            Default family used instead on input line 316.
-LaTeX Font Info:    Trying to load font information for T1+cmss on input line 316.
- (C:\Users\Marti\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmss.fd
-File: t1cmss.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-)
-LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 316.
- (C:\Users\Marti\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmss.fd
-File: ts1cmss.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-)
-LaTeX Info: Symbol \textrightarrow not provided by
-            font family ua1 in TS1 encoding.
-            Default family used instead on input line 316.
-LaTeX Info: Symbol \textrightarrow not provided by
-            font family ua1 in TS1 encoding.
-            Default family used instead on input line 316.
-
-Underfull \hbox (badness 10000) in paragraph at lines 312--319
-
- []
-
-<Recursos/playfair.png, id=183, 442.65375pt x 463.7325pt>
-File: Recursos/playfair.png Graphic file (type png)
-<use Recursos/playfair.png>
-Package pdftex.def Info: Recursos/playfair.png  used on input line 322.
-(pdftex.def)             Requested size: 435.32422pt x 456.08221pt.
-
-
-[6 <./Recursos/playfair.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 330--333
-
- []
-
-<Recursos/aes_test1.png, id=190, 436.63126pt x 94.55325pt>
-File: Recursos/aes_test1.png Graphic file (type png)
-<use Recursos/aes_test1.png>
-Package pdftex.def Info: Recursos/aes_test1.png  used on input line 338.
-(pdftex.def)             Requested size: 435.32422pt x 94.27022pt.
-<Recursos/aes_test2.png, id=191, 412.54124pt x 91.542pt>
-File: Recursos/aes_test2.png Graphic file (type png)
-<use Recursos/aes_test2.png>
-Package pdftex.def Info: Recursos/aes_test2.png  used on input line 346.
-(pdftex.def)             Requested size: 435.32422pt x 96.59825pt.
-<Recursos/des_test1.png, id=192, 407.121pt x 91.542pt>
-File: Recursos/des_test1.png Graphic file (type png)
-<use Recursos/des_test1.png>
-Package pdftex.def Info: Recursos/des_test1.png  used on input line 358.
-(pdftex.def)             Requested size: 435.32422pt x 97.8889pt.
-<Recursos/des_test2.png, id=193, 408.3255pt x 89.73524pt>
-File: Recursos/des_test2.png Graphic file (type png)
-<use Recursos/des_test2.png>
-Package pdftex.def Info: Recursos/des_test2.png  used on input line 366.
-(pdftex.def)             Requested size: 435.32422pt x 95.67068pt.
-
-
-[7 <./Recursos/aes_test1.png> <./Recursos/aes_test2.png> <./Recursos/des_test1.png> <./Recursos/des_test2.png>]
-<Recursos/vigenere_test1.png, id=202, 401.70074pt x 84.315pt>
-File: Recursos/vigenere_test1.png Graphic file (type png)
-<use Recursos/vigenere_test1.png>
-Package pdftex.def Info: Recursos/vigenere_test1.png  used on input line 379.
-(pdftex.def)             Requested size: 435.32422pt x 91.37402pt.
-<Recursos/vigenere_test2.png, id=203, 407.121pt x 90.3375pt>
-File: Recursos/vigenere_test2.png Graphic file (type png)
-<use Recursos/vigenere_test2.png>
-Package pdftex.def Info: Recursos/vigenere_test2.png  used on input line 387.
-(pdftex.def)             Requested size: 435.32422pt x 96.60088pt.
-<Recursos/playfair_test1.png, id=204, 323.40825pt x 89.73524pt>
-File: Recursos/playfair_test1.png Graphic file (type png)
-<use Recursos/playfair_test1.png>
-Package pdftex.def Info: Recursos/playfair_test1.png  used on input line 403.
-(pdftex.def)             Requested size: 435.32422pt x 120.78816pt.
-<Recursos/playfair_test2.png, id=205, 325.81725pt x 83.1105pt>
-File: Recursos/playfair_test2.png Graphic file (type png)
-<use Recursos/playfair_test2.png>
-Package pdftex.def Info: Recursos/playfair_test2.png  used on input line 411.
-(pdftex.def)             Requested size: 435.32422pt x 111.04408pt.
-
-
-[8 <./Recursos/vigenere_test1.png> <./Recursos/vigenere_test2.png> <./Recursos/playfair_test1.png> <./Recursos/playfair_test2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 422--426
-
+Underfull \hbox (badness 10000) in paragraph at lines 402--402
+[]|\T1/cmr/m/n/10 Comunidade (texto
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 422--426
 
- []
+[7]
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 422--426
-
- []
-
-
+[8]
 
 [9]
-LaTeX Font Info:    Font shape `T1/ua1/m/it' will be
-(Font)              scaled to size 9.49997pt on input line 438.
-LaTeX Font Info:    Font shape `TS1/ua1/m/it' will be
-(Font)              scaled to size 9.49997pt on input line 438.
 
-Overfull \hbox (6.98294pt too wide) in paragraph at lines 439--439
-[][]\T1/ua1/m/n/10 Martinho Ca-eiro & Paulo Abade. (2025). \T1/ua1/m/it/10 (De)cipher\TS1/ua1/m/it/10 — \T1/ua1/m/it/10 - Re-po-si-tó-rio de Có-digo \T1/ua1/m/n/10 [Re-po-si-tó-rio da Apli-ca-ção (De)cipher\TS1/ua1/m/n/10 —\T1/ua1/m/n/10 ].
- []
+[10]
 
+[11]
 
-
-[10] (Relatorio.aux)
+[12] (Relatorio.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-10-09>
  ***********
 Package rerunfilecheck Info: File `Relatorio.out' has not changed.
-(rerunfilecheck)             Checksum: 30CFEDD3650E2ED96256AF7F76E2150D;1586.
+(rerunfilecheck)             Checksum: 62B4C3AC55B8B5B7095444BE3EBCCC1A;4039.
 Package logreq Info: Writing requests to 'Relatorio.run.xml'.
 \openout1 = `Relatorio.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38293 strings out of 473897
- 763662 string characters out of 5726462
- 1620424 words of memory out of 5000000
- 60570 multiletter control sequences out of 15000+600000
- 631166 words of font info for 74 fonts, out of 8000000 for 9000
+ 38062 strings out of 473897
+ 757159 string characters out of 5726462
+ 1626703 words of memory out of 5000000
+ 60322 multiletter control sequences out of 15000+600000
+ 569448 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,10n,107p,748b,2805s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\Marti\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss1000.pk><C:/Users/Marti/AppData/Local/Programs/MiKTeX/fonts/type1/urw/arial/ua1b8a.pfb><C:/Users/Marti/AppData/Local/Programs/MiKTeX/fonts/type1/urw/arial/ua1bi8a.pfb><C:/Users/Marti/AppData/Local/Programs/MiKTeX/fonts/type1/urw/arial/ua1r8a.pfb><C:/Users/Marti/AppData/Local/Programs/MiKTeX/fonts/type1/urw/arial/ua1ri8a.pfb><C:/Users/Marti/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on Relatorio.pdf (15 pages, 429497 bytes).
+ 99i,10n,107p,1317b,2805s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Marti\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\Marti\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbi1000.pk> <C:\Users\Marti\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\Marti\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk> <C:\Users\Marti\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1000.pk> <C:\Users\Marti\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\Marti\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbi1728.pk> <C:\Users\Marti\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\Marti\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\Marti\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk>
+Output written on Relatorio.pdf (17 pages, 293362 bytes).
 PDF statistics:
- 277 PDF objects out of 1000 (max. 8388607)
- 51 named destinations out of 1000 (max. 500000)
- 226 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 758 PDF objects out of 1000 (max. 8388607)
+ 100 named destinations out of 1000 (max. 500000)
+ 255 words of extra memory for PDF output out of 10000 (max. 10000000)
 
