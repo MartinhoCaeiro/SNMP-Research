@@ -173,10 +173,12 @@ Desenvolvido inicialmente nos finais da década de 1980 como parte da arquitetur
 Ao longo de mais de três décadas de evolução, o SNMP passou por diversas revisões significativas, resultando em três versões principais: SNMPv1, SNMPv2 e SNMPv3. Cada versão trouxe melhorias em termos de funcionalidade, eficiência e, particularmente importante, segurança. A versão mais recente, SNMPv3, introduziu mecanismos robustos de autenticação e encriptação, respondendo às crescentes preocupações com a segurança das infraestruturas de rede (\cite{rfc3414}).
 
 Este relatório tem como objetivo apresentar um estudo aprofundado do protocolo SNMP, explorando a sua arquitetura fundamental, os componentes que o constituem, e o seu funcionamento operacional. Serão analisadas detalhadamente as características técnicas de cada versão, bem como as suas vantagens e limitações. A análise comparativa entre versões permitirá compreender a evolução do protocolo e as razões que motivaram as alterações introduzidas. Por fim, serão discutidos os desafios atuais na implementação e utilização do SNMP em ambientes de rede modernos.
-
+\newpage
 
 %---------------------------------------------------------------------------------------------------------------------------
 \section{Fundamentos do SNMP}\label{fundamentos}
+Nesta secção, serão apresentados os fundamentos do SNMP, incluindo a sua definição, propósito, arquitetura e funcionamento básico. Esta base teórica é essencial para 
+compreender as diferenças entre as versões do protocolo que serão analisadas posteriormente.
 
 \subsection{Definição e Propósito}
 
@@ -210,7 +212,8 @@ A arquitetura do SNMP baseia-se no modelo gestor-agente (\textit{manager-agent})
 \newpage
 \subsection{Funcionamento e Operações}
 
-O SNMP define um conjunto limitado de operações básicas, mantendo a simplicidade que caracteriza o protocolo. As principais operações são (\cite{rfc3416}):
+O SNMP define um conjunto limitado de operações básicas, mantendo a simplicidade que caracteriza o protocolo. As principais 
+operações são (\cite{rfc3416}):
 
 \begin{itemize}
     \item \textbf{GET}: Permite ao gestor obter o valor de uma ou mais variáveis específicas da MIB. Esta é a operação mais comum, utilizada para consultar informações sobre o estado do dispositivo.
@@ -226,9 +229,9 @@ O SNMP define um conjunto limitado de operações básicas, mantendo a simplicid
     \item \textbf{INFORM}: Semelhante ao TRAP, mas com confirmação de receção. Introduzida no SNMPv2, garante maior fiabilidade na entrega de notificações.
 \end{itemize}
 
-\begin{figure}[h!]
+\begin{figure}[h]
 	\centering
-	\includegraphics[width=0.9\textwidth]{Recursos/snmp_operations.png}
+	\includegraphics[width=0.5\textwidth]{Recursos/snmp_operations.png}
 	\caption{Operações do SNMP}
 	\label{fig:nfswarning}
 \end{figure}
@@ -236,10 +239,10 @@ O SNMP define um conjunto limitado de operações básicas, mantendo a simplicid
 %---------------------------------------------------------------------------------------------------------------------------
 \newpage
 \section{Versões do SNMP}\label{versoes}
+Nesta secção, serão analisadas as três principais versões do SNMP: SNMPv1, SNMPv2 e SNMPv3. Para cada versão, serão discutidas as suas características técnicas, vantagens e desvantagens, com ênfase especial na evolução dos mecanismos de segurança ao longo do tempo.
 
 \subsection{SNMPv1}\label{snmpv1}
 
-\subsubsection{Características}
 
 O SNMPv1, definido nas RFC 1155, 1157 e 1212, foi a primeira versão do protocolo, publicada em 1988 (\cite{rfc1157}). Esta versão estabeleceu os fundamentos conceptuais que persistem em todas as versões subsequentes do protocolo.
 
@@ -252,7 +255,7 @@ As principais características do SNMPv1 incluem:
     \item \textbf{Transporte UDP}: Utiliza UDP para comunicação, minimizando o overhead de rede.
     \item \textbf{Tipos de mensagens}: Define cinco tipos de PDUs (\textit{Protocol Data Units}): GetRequest, GetNextRequest, SetRequest, GetResponse e Trap.
 \end{itemize}
-
+\newpage
 \subsubsection{Vantagens}
 
 O SNMPv1 apresenta várias vantagens que justificaram a sua ampla adoção:
@@ -281,22 +284,20 @@ Apesar das suas vantagens, o SNMPv1 apresenta limitações significativas:
     \item \textbf{Tratamento de erros limitado}: O SNMPv1 possui capacidades limitadas de tratamento e reporte de erros, dificultando o diagnóstico de problemas.
     
     \item \textbf{Operações limitadas}: A ausência de operações como GET-BULK resulta em ineficiência quando é necessário obter grandes quantidades de dados.
-    
+    \newpage
     \item \textbf{Sem confirmação de TRAPs}: Os TRAPs são enviados sem confirmação, podendo perder-se sem que o agente tenha conhecimento.
 \end{enumerate}
 
-\begin{figure}[h!]
+\begin{figure}[h]
 	\centering
-	\includegraphics[width=0.9\textwidth]{Recursos/v1_message.png}
+	\includegraphics[width=0.7\textwidth]{Recursos/v1_message.png}
 	\caption{Formato do SNMPv1}
 	\label{fig:nfswarning}
 \end{figure}
 
 %-----------------------------------------------------------------
-\newpage
 \subsection{SNMPv2}\label{snmpv2}
 
-\subsubsection{Características}
 
 O SNMPv2, inicialmente publicado em 1993 e posteriormente revisto (SNMPv2c definido na RFC 1901), foi desenvolvido para endereçar algumas das limitações funcionais do SNMPv1 (\cite{rfc1905}). A versão "c" (\textit{community-based}) tornou-se a mais amplamente utilizada.
 
@@ -307,6 +308,7 @@ As principais características do SNMPv2 incluem:
     \item \textbf{GET-BULK}: Nova operação que permite obter múltiplas variáveis numa única mensagem, melhorando significativamente a eficiência.
     \item \textbf{INFORM}: Novo tipo de notificação com confirmação de receção, aumentando a fiabilidade.
     \item \textbf{Tratamento de erros melhorado}: Códigos de erro mais detalhados facilitam o diagnóstico de problemas.
+    \newpage
     \item \textbf{Comunicação gestor-gestor}: Capacidade de comunicação entre sistemas gestores, permitindo arquiteturas distribuídas.
 \end{itemize}
 
@@ -340,18 +342,17 @@ Apesar das melhorias, o SNMPv2 mantém algumas limitações:
     \item \textbf{Overhead adicional}: As novas funcionalidades, embora úteis, aumentam ligeiramente a complexidade e os requisitos de processamento.
 \end{enumerate}
 
-\begin{figure}[h!]
+\begin{figure}[h]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Recursos/v2_message.png}
+	\includegraphics[width=0.5\textwidth]{Recursos/v2_message.png}
 	\caption{Formato do SNMPv2}
 	\label{fig:nfswarning}
 \end{figure}
 
 %-------------------------------------------------------------------------------------------------------------------------------------------------
-\newpage
+
 \subsection{SNMPv3}\label{snmpv3}
 
-\subsubsection{Características}
 
 O SNMPv3, definido nas RFC 3410-3415, foi publicado em 1998 e representa a evolução mais significativa do protocolo, focando-se primariamente em segurança (\cite{rfc3411}). Esta versão não substitui o SNMPv2, mas adiciona capacidades de segurança robustas.
 
@@ -411,9 +412,9 @@ Apesar das suas capacidades avançadas, o SNMPv3 apresenta alguns desafios:
     \item \textbf{Curva de aprendizagem}: Administradores familiarizados com SNMPv1/v2c necessitam de formação adicional para utilizar eficazmente o SNMPv3.
 \end{enumerate}
 
-\begin{figure}[h!]
+\begin{figure}[h]
 	\centering
-	\includegraphics[width=0.9\textwidth]{Recursos/v3_message.png}
+	\includegraphics[width=0.5\textwidth]{Recursos/v3_message.png}
 	\caption{Formato do SNMPv3}
 	\label{fig:nfswarning}
 \end{figure}
@@ -428,13 +429,13 @@ A tabela~\ref{tab:comparacao} apresenta uma comparação sintética das três ve
 \centering
 \caption{Comparação entre as versões do SNMP}
 \label{tab:comparacao}
-\begin{tabular}{|p{4cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|}
+\begin{tabular}{|p{4cm}|p{2.5cm}|p{2.5cm}|p{3.0cm}|}
 \hline
 \textbf{Característica} & \textbf{SNMPv1} & \textbf{SNMPv2c} & \textbf{SNMPv3} \\
 \hline
 Ano de publicação & 1988 & 1993/1996 & 1998 \\
 \hline
-Autenticação & Comunidade (texto claro) & Comunidade (texto claro) & USM com HMAC \\
+Autenticação & Comunidade & Comunidade & USM com HMAC \\
 \hline
 Encriptação & Não & Não & Sim (DES/AES) \\
 \hline
@@ -513,13 +514,12 @@ A diversidade de implementações de SNMP entre fabricantes pode causar problema
 
 
 %---------------------------------------------------------------------------------------------------------------------------
-\newpage
 \section{Conclusão}\label{con}
 
 Em suma, o SNMP estabeleceu-se como padrão de facto para gestão de redes IP, mantendo-se relevante por mais de três décadas. A sua evolução em três versões principais mostra um equilíbrio entre funcionalidade, segurança e simplicidade: o SNMPv1 definiu os fundamentos, simples e eficiente, porém com segurança limitada; o SNMPv2c trouxe melhorias como GET-BULK e contadores de 64 bits, mantendo desempenho mas ainda com proteção insuficiente; e o SNMPv3 introduziu segurança robusta, adequado para ambientes críticos, embora com maior complexidade e overhead. 
 
 A escolha da versão deve considerar segurança, compatibilidade, desempenho e recursos disponíveis, sendo recomendado o SNMPv3 sempre que possível, aplicando medidas compensatórias quando versões antigas forem inevitáveis. 
-
+\newpage
 Apesar de suas limitações iniciais, o SNMP continua amplamente utilizado e demonstra como um protocolo pode evoluir para atender às necessidades modernas de redes, mantendo os princípios de simplicidade que motivaram sua criação.
 
 %---------------------------------------------------------------------------------------------------------------------------
